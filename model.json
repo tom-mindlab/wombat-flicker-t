@@ -1,0 +1,174 @@
+{
+	"name": "flicker-t",
+	"description": "Visual standout test",
+	"version": "0",
+	"start": "../../main.html",
+	"data": null,
+	"configuration": {
+		"type": "object",
+		"properties": {
+			"wombat_component": {
+				"enum": [
+					"flicker"
+				],
+				"default": "flicker"
+			},
+			"language_options": {
+				"type": "object"
+			},
+			"sample": {
+				"type": "object",
+				"properties": {
+					"stimuli": {
+						"type": "integer"
+					},
+					"variants": {
+						"type": "integer"
+					},
+					"combinations": {
+						"type": "integer"
+					}
+				}
+			},
+			"timer_duration": {
+				"type": "number",
+				"default": 10000
+			},
+			"base_hold": {
+				"type": "number",
+				"default": 500
+			},
+			"variant_hold": {
+				"type": "number",
+				"default": 500
+			},
+			"base_variant_wait": {
+				"type": "number",
+				"default": 300
+			},
+			"variant_base_wait": {
+				"type": "number",
+				"default": 300
+			},
+			"repeats": {
+				"type": "number",
+				"default": 1
+			},
+			"randomise": {
+				"type": "boolean",
+				"default": true
+			},
+			"stimuli": {
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"base": {
+							"type": "object",
+							"required": true,
+							"properties": {
+								"name": {
+									"type": "string",
+									"required": true
+								},
+								"path": {
+									"type": "string",
+									"required": true
+								}
+							}
+						},
+						"variants": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string",
+										"required": true
+									},
+									"path": {
+										"type": "string",
+										"required": true
+									},
+									"rectangle": {
+										"type": "array",
+										"items": {
+											"type": "object",
+											"properties": {
+												"x1": {
+													"type": "number",
+													"required": true
+												},
+												"x2": {
+													"type": "number",
+													"required": true
+												},
+												"y1": {
+													"type": "number",
+													"required": true
+												},
+												"y2": {
+													"type": "number",
+													"required": true
+												}
+											}
+										},
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"default_configuration": {
+		"timer_duration": 10000,
+		"base_hold": 500,
+		"variant_hold": 500,
+		"base_variant_wait": 300,
+		"variant_base_wait": 300,
+		"repeats": 1,
+		"maximum_usage": 3,
+		"stimuli": [
+			{
+				"base": {
+					"name": "base_0_SHELF.csv",
+					"path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Captain%20Morgan%202/Routes/Design%20Bridge%201%20-%204%20Corners/flicker_search/base_0_SHELF.jpg"
+				},
+				"variants": [
+					{
+						"name": "variant_0",
+						"rectangle": [
+							{
+								"x1": 62,
+								"y1": 13,
+								"x2": 136,
+								"y2": 273
+							}
+						],
+						"path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Captain%20Morgan%202/Routes/Design%20Bridge%201%20-%204%20Corners/flicker_search/variant_0_0.jpg"
+					},
+					{
+						"name": "variant_1",
+						"rectangle": [
+							{
+								"x1": 138,
+								"y1": 13,
+								"x2": 212,
+								"y2": 273
+							}
+						],
+						"path": "https://toosuite-public-resources.s3.amazonaws.com/Diageo%20-%20Captain%20Morgan%202/Routes/Design%20Bridge%201%20-%204%20Corners/flicker_search/variant_0_1.jpg"
+					}
+				]
+			}
+		],
+		"language_options": {
+			"title": "Find the flickering bottle",
+			"pause_message": "Take a break from the bottle.",
+			"pause_continue_button": "more bottles!"
+		}
+	}
+}
